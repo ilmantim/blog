@@ -55,8 +55,9 @@
             <div class="news_d_footer flex-column flex-sm-row">
               <a href="#"
                 ><span class="align-middle mr-2"
-                  ><i style="color: red" class="ti-heart"></i></span
-                >{{ post.likes_amount }} people like this</a
+                  ><i style="color: red" class="ti-heart"></i>
+                  </span>
+                  {{ post.likes_amount }} people like this</a
               >
               <a
                 class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2"
@@ -76,24 +77,25 @@
           </div>
           <div class="comments-area">
             <h4>{{ post.comments|length }} Comments</h4>
-            {% for comment in post.comments %}
-            <div class="comment-list">
-              <div class="single-comment justify-content-between d-flex">
-                <div class="user justify-content-between d-flex">
-                  <div class="desc">
-                    <h5><a href="#">{{ comment.author }}</a></h5>
-                    <p class="date">{{ comment.published_at }}</p>
-                    <p class="comment">{{ comment.text }}</p>
+              {% for comment in post.comments %}
+                <div class="comment-list">
+                  <div class="single-comment justify-content-between d-flex">
+                    <div class="user justify-content-between d-flex">
+                      <div class="desc">
+                        <h5><a href="#">{{ comment.author }}</a></h5>
+                        <p class="date">{{ comment.published_at }}</p>
+                        <p class="comment">{{ comment.text }}</p>
+                      </div>
+                    </div>
+                    <div class="reply-btn">
+                      <a href="" class="btn-reply text-uppercase">reply</a>
+                    </div>
                   </div>
                 </div>
-                <div class="reply-btn">
-                  <a href="" class="btn-reply text-uppercase">reply</a>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
+              {% endfor %}
           </div>
         </div>
+        <!-- Start Blog Post Siddebar -->
         <div class="col-lg-4 sidebar-widgets">
           <div class="widget-wrap">
             <div class="single-sidebar-widget newsletter-widget">
@@ -114,17 +116,15 @@
             </div>
   
             <div class="single-sidebar-widget post-category-widget">
-              <h4 class="single-sidebar-widget" style="height: 200px">
-                Здесь будет реклама
-              </h4>
+            <h4 class="single-sidebar-widget" style="height: 200px">
+              Здесь будет реклама
+            </h4>
             </div>
           </div>
         </div>
+        <!-- End Blog Post Siddebar -->
       </div>
     </div>
-    <!-- Start Blog Post Siddebar -->
-  
-    <!--================ End Blog Post Area =================-->
   </section>
   <!--================ End Blog Post Area =================-->
 {% endblock %}
